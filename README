@@ -1,62 +1,24 @@
-Apache Jena Fuseki2
-===================
-
-Apache Jena Fuseki2 is a SPARQL server.
-
-Full documentation:
-  http://jena.apache.org/documentation/fuseki2/
-
-This distribution contains Fuseki2 package as a WAR file ('fuseki.war'),
-to run in a webapp conatiner server such as Apache Tomcat, and also a
-self-contained jar, to run as a operation system process.
-
-The script 'fuseki' is an Linux init script to run Fuseki2 as a service.
-The file 'fuseki.service' is a systemd unit file to run Fuseki2 as a service.
-Instructions are in comments at the start of the files.
-
-The script 'fuseki-server' is a script to run the server using
-fuseki-server.jar from the command line.  Use 'fuseki-server --help' for
-details.
-
-The directory 'bin/' contains some scripts execute SPARQL Protocol and
-SPARQL Graph Store Protocol operations.
-Documentation: http://jena.apache.org/documentation/fuseki2/soh.html
-
-
-Cryptographic Software Notice
------------------------------
-
-This distribution includes cryptographic software. The country in which
-you currently reside may have restrictions on the import, possession,
-use, and/or re-export to another country, of encryption software. BEFORE
-using any encryption software, please check your country's laws,
-regulations and policies concerning the import, possession, or use, and
-re-export of encryption software, to see if this is permitted.
-See <http://www.wassenaar.org/> for more information.
-
-The U.S. Government Department of Commerce, Bureau of Industry and
-Security (BIS), has classified this software as Export Commodity
-Control Number (ECCN) 5D002.C.1, which includes information security
-software using or performing cryptographic functions with asymmetric
-algorithms. The form and manner of this Apache Software Foundation
-distribution makes it eligible for export under the License Exception
-ENC Technology Software Unrestricted (TSU) exception (see the BIS
-Export Administration Regulations, Section 740.13) for both object
-code and source code.
-
-The following provides more details on the included software that
-may be subject to export controls on cryptographic software:
-
-  Apache Jena Fuseki2 (distribution) includes
-     Apache HttpComponents Client 
-     Apache HttpComponents Core
-  which interfaces with the Java Secure Socket Extension (JSSE) API
-  and also 
-     Apache Shiro
-     Eclipse Jetty
-  to provide
-
-     - HTTPS support
-
-   Apache Jena Fuseki2 (distribution) does not include any
-   implementation of JSSE.
+Em um contexto de aumento expressivo do volume de dados gerados, é imprescindível que os dados estejam dispostos de maneira organizada e concisa para agilidade na tomada de decisões. A dependência das empresas com relação aos dados gerou o termo Data Driven Companies. Nesse tipo de empresa, há um foco crescente orientado nas atividades de qualidade dos dados e DataOps.
+	“A cada ano, a taxa de resposta aumenta e a urgência relatada de fazer uso eficaz dos dados também aumenta” (Davenport; Bean, 2019)
+	Hyland, Atemezing e Villazon-Terraza (2014) definiram por meio do edital de melhores práticas em linked data, recomendação a serem seguidas na disponibilização dos dados na Web por meio do edital do Linked Data Plataform da qual este projeto pretende seguir.
+Use URIs as names for things
+Use HTTP URIs so that people can look up those names.
+When someone looks up a URI, provide useful information.
+Include links to other URIs. so that they can discover more things.
+Princípios de Linked Data, W3C, 2016. Fonte: W3C
+A principal mudança com relação a uma representação comum em arquivo csv ou de banco de dados relacional é o uso de URIs para representar os conceitos. URIs em linked data fornecem uma implementação estruturada e única dos conceitos. Tais padrões foram propostos para que os dados publicados sejam trivialmente e automaticamente relacionados entre si por meio do matching dos conceitos representados. 
+Para seguir as melhores práticas de linked data, este artigo realizará a definição de modelos de domínio conceitual por ontologias. Uma série de autores abordam as melhores práticas para definição de ontologias e publicação de dados ligados. 
+Este trabalho tem por objetivo estruturar as informações dos documentos de Patentes Brasileiras em formato de Ontologias e Dados Ligados seguindo a metodologia SABIO de Falbo (2014) para extensão da ontologia de patentes USPatents de Hassan; Zaveri; Lehman, 2018.
+O benefício em torno da modelagem conceitos contribui, por exemplo, no desenvolvimento da seguinte análise:
+Há relação entre o PIB dos Países e a quantidade de inventos produzidos por grandes empresas??
+	Isso ocorre devido às ontologias delimitarem o escopo hierárquico e de relacionamento das entidades, em que é muito bem delimitado, por exemplo, o número de funcionários e faturamento das empresas como atributos da classe (entidade) empresa, PIB como atributo de país, como também a definição de invento, seus atributos e relacionamentos de maneira consistente e estruturada.
+É possível obter esses dados, tais como PIB ou informações de funcionários de maneira estruturada em outros sistemas que contenham informações desse domínio, pois a recomendação de Linked Data Platform, se seguida, visa reduzir ambiguidades entre diferentes sistemas para permitir interoperabilidade e integração de dados baseado na definição de entidades unificadas na construção dos diferentes sistemas. 
+Por fim, o emprego de Linked Data, ontologias e técnicas de representação de conhecimento permite que a análise dos dados seja empregada de maneira trivial no conjunto de dados, dado que os padrões envolvem a construção de sistemas baseados em lógica descritiva que, por meio de axiomas, podem inferir conceitos no conjunto de dados.
+“Raciocinadores automatizados podem deduzir (inferir) conclusões do conhecimento fornecido, tornando explícito o conhecimento implícito” (Antoniu; Groth; Harmelen; Hoekstra, 2012, p.13).
+	No que envolve o estudo de patentes e títulos de propriedade intelectual, os campos de estudo que se desenvolveram em torno da análise dos dados de patentes incluem Technology Mining e Patent Mining. Madani (2015) define as seguintes sub-áreas de pesquisa em patentes: análise de tecnologias emergentes e dinâmica de tecnologia (análises de tendências), previsão de tecnologia, roadmapping e previsão, gestão de pesquisa e desenvolvimento, indicadores de indústrias de engenharia, ciência e tecnologia (C&T), economia evolutiva, avaliação de tecnologia e impacto, análises e estudos de política científica e análise do fluxo de conhecimento. Aplicar padrões de Linked Data visa fornecer uma maior integração e interoperabilidade entre as atividades inerentes à área.
+	Para que possamos representar as informações das patentes em formato linked data, é necessário a prévia extração dos dados. 
+A obtenção de dados de patentes brasileiras atualmente não pode ser feita de modo simplificado dado que o repositório de patentes brasileiras não permite o download dos dados disponibilizados no site de maneira estruturada antes de 2017. Dificultando o desenvolvimento da Mineração de tecnologia como ciência bibliométrica. Ao fim da extração e disponibilização de dados de patentes em dados ligados, qualquer analista pode obtê-los de forma trivial.  
+“Extrair dados de páginas da Web e disponibilizá-los para aplicativos de computador continua sendo uma tarefa complexa e relevante. “ (Crecenzi; Mecca; Merialdo, 2001)
+“Desde agosto de 2017, de forma a se adequar ao Decreto no 8.777/2016, o INPI passou a disponibilizar, no Portal de Dados Abertos, a Revista de Propriedade Industrial (RPI), com a possibilidade de baixar os metadados das seções da revista, contendo informações sobre o registro de solicitações, os recursos e as concessões de patentes.” (Moura, Ana; Santos, Fernanda; Magnus, Ana; Consoni, Letícia, Júnior; René, 2019)
+	O repositório europeu de patentes (EPO), gerenciador do PATSTAT, base de patentes amplamente usada no desenvolvimento de pesquisa em mineração de patentes, mantém um portal de patentes em formato de linked data em https://data.epo.org/linked-data/. Embora siga a maioria das recomendações do Linked Data Platform, a proveniência das patentes no repositório europeu são de patentes europeias ou internacionais que seguem o tratado em matéria de cooperação em patentes (PCT), das quais patentes locais não cumprem com a jurisdição. Mais detalhes sobre a cobertura de patentes pode ser visto em https://data.epo.org/linked-data/documentation/data-coverage.html
+	Este trabalho está estruturado da seguinte forma. Na seção 2, apresentamos os objetivos deste trabalho, tanto a níveis gerais quanto específicos. Na seção 3, o leitor será apresentado a conceitos básicos de ontologias, da metodologia SABIO e de patentes. Na seção 4 da metodologia, mostraremos os passos tomados para construção de ontologia e base de brasileiras. A seção 5, de resultados, apresenta a ontologia de patentes e exemplifica os benefícios dela por meio de alguns casos de uso. Por fim, a seção 6 de conclusões sintetiza as principais observações produzidas e apresenta diretrizes para trabalhos futuros. 
